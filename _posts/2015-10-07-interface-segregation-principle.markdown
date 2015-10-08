@@ -4,9 +4,7 @@ title:  "The Interface Segregation Principle: A SOLID Software Principle"
 date:   2015-10-07 15:23:36
 categories: interface segregation principle SOLID software design 
 ---
-Why should your software depend on things that you don't need? According to the Interface Segregation Principle, it shouldn't.
-
-The Interface Segregation Principle (ISP) is one of the 5 SOLID prinicples in Object-oriented software design. This principle deals with the problem of having "fat" interfaces that include too many methods. In order to adhere to this principle, you want your interfaces to isolate specific behavior that your client will depend on. In other words, your client classes that use an interface should only depend and implement the methods that it will need.   
+The Interface Segregation Principle (ISP) is one of the 5 [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) prinicples in Object-oriented software design. This principle deals with the problem of having "fat" interfaces that include too many methods. In order to adhere to this principle, you want your interfaces to isolate specific behavior that your client will depend on. In other words, your client classes that use an interface should only depend and implement the methods that it will need.   
 
 Basically, what ISP can be boiled down into is this: 
 
@@ -48,7 +46,7 @@ To kind of help illustrate what I'm talking about here, I'll give a simple examp
         }
     }
 
-The thing to look at here is the fact that there's a lot going on in the Vehicle interface. What if you needed to create a car that doesn't have a radio but still implements the Vehicle interface? You would be forced to implement the `startRadio()`, `changeStation()`, and the `ejectCD()` functions, and thus, violating the Interface Segregation Principle. Don't you think that we could break these methods up in to more isolated behaviors? Most certainly! Lets see how we might want to do this.
+The thing to look at here is the fact that there's a lot going on in the Vehicle interface. What if you needed to create a car that doesn't have a radio but still implements the Vehicle interface? You would be forced to implement the `startRadio()`, `changeStation()`, and the `ejectCD()` functions, and thus, violating the Interface Segregation Principle. Lets see how we might be able to avoid this issue.
 
     public interface Startable {
         public void turnOn();
