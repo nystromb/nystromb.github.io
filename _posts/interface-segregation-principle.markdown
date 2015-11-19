@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "The Interface Segregation Principle: A SOLID Software Principle"
-date:   2015-10-07 15:23:36
-categories: interface segregation principle SOLID software design 
+date:  October 7th, 2015
+blog: true
 ---
 The Interface Segregation Principle (ISP) is one of the 5 [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) prinicples in Object-oriented software design. This principle deals with the problem of having "fat" interfaces that include too many methods. In order to adhere to this principle, you want your interfaces to isolate specific behavior that your client will depend on. In other words, your client classes that use an interface should only depend and implement the methods that it will need.   
 
