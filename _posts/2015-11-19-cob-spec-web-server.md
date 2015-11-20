@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Cob Spec Web Server"
+title:  "HTTP Server From Scratch"
 date:  November 19th, 2015
 blog: true
 ---
