@@ -5,11 +5,16 @@ date:  January 21th, 2016
 blog: true
 ---
 
-Recently I have been introduced to the crazy world of the functional programming by learning Clojure. Speaking as someone who has mainly a Java background, I naturally like to write programs in an Object Oriented way, by creating mutable objects with classes. However, once I began writing programs in Clojure, this imperative way of thinking has pretty much gone completely out the window.
 
-In Object Oriented programming languages, you will have classes that have data fields, and you will modify that data fields using methods that the classes define. Functional languages work a little different, by the fact that they generally avoid containing immutable data and operate by performing mathematical transformations on data. This means that you don't really make variable assignments to data or have `while` or `for` loops like you would in an imperative style language. This makes functional languages good for concurrent systems.
+Recently I have been introduced to the interesting world of the functional programming by learning how to program in Clojure. Functional programming is an entirely different paradigm than it's imperative counterpart, it's good to know what they are useful for. If you are used to thinking about your code in classes and objects, like me, learning a functional language might challenge the way you think, in a good way.
 
-Learning to think in a "functional" way might take some getting used to, but after spending some time learning Clojure, I'm starting to force myself to approach problems a little differently. In the functional paradigm everything is essentially a ...function, and every expression has a return value. For example, if you write a function that adds up all the numbers up to a given number n in both an imperative and a functional program, you'll notice some interesting differences.
+In the Imperative programming paradigm, you will have classes that encapsulate data fields, which then gets modified using methods that the classes define. By changing the data fields, these objects are mutable. Since most of my experience in Java, this is what I have been used to.
+
+On the other hand, functional languages work quite differently, given the fact that functional languages generally avoid containing mutable data, and instead operate by performing a series of mathematical transformations on data.
+
+Learning to think in a "functional" way might take some getting used to, but after spending some time learning Clojure, I'm starting to force myself to approach problems a little differently. In the functional paradigm everything is essentially a ...function, and every expression has a return value. This results in a file that contains many micro functions.
+
+ I find that it helps to see the difference through a simple example, by trying to write a function in both an imperative language, like Java, and a functional one, like Clojure. Below I have created a function that will add all the numbers starting from 0 to a given number:
 
     (defn add-up-to [n]
       (reduce + (range n)))
@@ -39,4 +44,6 @@ You'll notice that in the Java example, you must set the variables `sum` and `i`
 
 Then it will use a reduce function, which takes two parameters, a function and a collection. So I pass it the `+` function and a range of values `(0 1 2)` and uses the `+` on each of those numbers and returns the result of applying + to every number in the list.
 
-This is a pretty basic example, but the example highlights some of the main differences of both of these programming paradigms. In one example, you don't save any data, just input -> transform -> output, while the other was longer and had stored some variables. It's long debated whether one is better than the other, but I think they have their specific applications, and you should use the right tool for the job. However, one of the best things about the beauty of Clojure is that it allows for Java interop. That means the Clojure can actually use Java classes to perform functions. This makes for a extremely powerful functional language.
+I think that functional programming has it's place in distributed, concurrent systems. By creating immutable data structures, you won't run into certain bugs that will be caused by accessing some shared state. One benefit I have come to realize of an imperative style approach is that thinking of objects makes your software act like it is a real life object. For example, in a Tic Tac Toe game, you might have a `Board` object that during the course of the game, the board changes, until some end game condition. If you were using a functional approach, you might want to return a new game every time you want to call the function to put a move on the board.
+
+I have highlighted some of the main differences of both of these programming paradigms. In one example, you don't save any data, just input -> transform -> output, while the other was longer and contained some stored variables. It's long debated whether one is better than the other, but I think they have their specific applications, and you should always use the right tool for the job. However, one of the best things about the beauty of Clojure is that it allows for Java interop. That means the Clojure can actually use Java classes to perform functions. This sort of hybrid-OO language makes for a extremely powerful language.
