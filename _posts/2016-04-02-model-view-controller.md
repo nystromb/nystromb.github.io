@@ -6,13 +6,13 @@ blog: true
 ---
 
 
-In my time as a developer, pretty much all of the applications that I have created has had some type of user viewable result, whether it was a basic terminal screen, a web page, or the display on a clock. The Observer pattern is a pattern that i've begun to find use for in many of my applications. The Observer pattern is a Behavior design pattern that is used in cases where you have one or many "Observer" objects that are notified when another class changes state. The Observer Pattern is a good pattern to understand because it is a pattern that can be used in many GUI applications, and it's a key part in the Model-View-Controller (MVC) architecture that is used in many web frameworks.
+In my time as a developer, pretty much all of the applications that I have created has had some type of user viewable result, whether it was a basic terminal screen, a web page, or the display on a clock. The Observer pattern is a pattern that I've begun to find use for in many of my applications. The Observer pattern is a behavior design pattern that is used in cases where you have one or many "Observer" objects that are notified when another class changes state. The Observer Pattern is a good pattern to understand because it is a pattern that can be used in many GUI applications, and it's a key part in the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) (MVC) architecture that is used in many web frameworks.
 
 The main goal of the Observer pattern is to focus on one core component of your application that may need to notify other components of your system of any changes in it's state. In the observer pattern, the objects being notified are called the "Observers" and the object that does the notifying is called the the Subject. To implement this pattern, you need to identify and understand these two things in your application:
 
 **1. The Subject**
 
-The subject can be thought of as the meat of your application. This is the part of your application where your core logic and data is stored that runs in your applications. In the context of a tic tac toe application, a class called ```Board``` might be considered the Subject, because it would be the class that knows about the state of the board. To picture this better, I will provide a sample of what this `Subject` abstraction should look like:
+The Subject can be thought of as the meat of your application. This is the part of your application where your core logic and data is stored that runs in your application. In the context of a tic tac toe application, a class called `Board` might be considered the Subject, because it would be the class that knows about the state of the board. To picture this better, I will provide a sample of what this `Subject` abstraction should look like:
 
     public class Subject {
         List<Observers> listOfObservers = new List();
@@ -42,7 +42,7 @@ The `Subject` abstraction simply holds a list of observers, and when `notifyObse
 Given the example of a Tic Tac Toe game, the board is changed whenever somebody makes a move. So naturally, whenever `makeMove()` is called, it should notify the Observers that it has changed state. Also there may be many different Observers that all handle the `Board` object differently.
 
 **2. The Observer(s)**  
-The Observers, which are the view components in many GUI applications, is simply a visual representation of the Subject. An example observer in a tic tac toe game might be a class called ```TerminalView``` that is notified when the ```Board``` changes. In Java, an observer object would be implemented by use of an interface which specifies a single method with the signature ```void update(Object object)```.
+The Observers, which are the view components in many GUI applications, is simply a visual representation of the Subject. An example observer in a tic tac toe game might be a class called `TerminalView` that is notified when the `Board` changes. In Java, an observer object would be implemented by use of an interface which specifies a single method with the signature `void update(Object object)`.
 
 An `Observer` interface might look like:
 
