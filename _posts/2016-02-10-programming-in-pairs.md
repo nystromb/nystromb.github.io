@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Programming in Pairs"
-date:   2016-9-02 15:23:36
+date:   2016-02-10 15:23:36
 blog: true
 ---
+
 People might think that coding is a thing you do alone, but that couldn't be further from the truth. If you're not familiar, Pair Programming is a an concept where two people sit at the computer and take turns writing code. Before coming to 8th Light as an apprentice, I mainly only worked on projects alone. Being the only developer on a project limits your continued learning in many ways, especially as a new developer. However, now that I have had the opportunity to work with other apprentices and more experienced Craftsmen on projects, I have learned the benefits of Pair Programming.  
 
 There are two main methods of execution in Pair Programming. Each are a little different, but they give each person a specific role in a session.
